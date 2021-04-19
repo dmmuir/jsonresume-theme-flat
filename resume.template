@@ -46,27 +46,41 @@
 		</aside>
 		<div class="col-sm-9">
 			<div class="row">
-			{{#email}}
-			<div class="col-sm-6">
-				<strong>Email</strong>
-				<div class="email">{{.}}</div>
-			</div>
-			{{/email}}
-			{{#phone}}
-			<div class="col-sm-6">
-				<strong>Phone</strong>
-				<div class="phone">{{.}}</div>
-			</div>
-			{{/phone}}
-			{{#website}}
-			<div class="col-sm-6">
-				<strong>Website</strong>
-				<div class="website">
-					<a href="{{.}}">{{.}}</a>
+				{{#email}}
+				<div class="col-sm-6">
+					<strong>Email</strong>
+					<div class="email">{{.}}</div>
 				</div>
+				{{/email}}
+				{{#phone}}
+				<div class="col-sm-6">
+					<strong>Phone</strong>
+					<div class="phone">{{.}}</div>
+				</div>
+				{{/phone}}
+				{{#website}}
+				<div class="col-sm-6">
+					<strong>Website</strong>
+					<div class="website">
+						<a href="{{.}}">{{.}}</a>
+					</div>
+				</div>
+				{{/website}}
+				{{#location}}
+				{{#city}}
+				<div class="col-sm-6">
+					<strong>Address</strong>
+					<div class="address">{{.}}</div>
+				</div>
+				{{/city}}
+				{{#timezone}}
+				<div class="col-sm-6">
+					<strong>Timezone</strong>
+					<div class="timezone">{{.}}</div>
+				</div>
+				{{/timezone}}
 			</div>
-			{{/website}}
-			</div>
+			{{/location}}
 		</div>
 	</section>
 	<section id="about" class="row">
@@ -129,20 +143,30 @@
 			<div class="col-sm-12">
 				<h4 class="strike-through">
 					<span>{{company}}</span>
-					<span class="date">
-						{{startDate}} — {{endDate}}
-					</span>
+					<span class="date pull-right">{{duration}}</span>
 				</h4>
+				{{#if website.enabled}}
 				{{#website}}
 				<div class="website pull-right">
 					<a href="{{.}}">{{.}}</a>
 				</div>
 				{{/website}}
-				{{#position}}
+				{{/if}}
+				{{#each roles}}
+				{{#if position}}
 				<div class="position">
-					{{.}}
+					{{#position}}
+					<span>
+						{{.}}
+					</span>
+					{{/position}}
+					{{#date}}
+					<span class="date pull-right">
+						{{.}}
+					</span>
+					{{/date}}
 				</div>
-				{{/position}}
+				{{/if}}
 				{{#summary}}
 				<div class="summary">
 					<p>{{.}}</p>
@@ -156,6 +180,7 @@
 					{{/highlights}}
 				</ul>
 				{{/if}}
+				{{/each}}
 			</div>
 			{{/each}}
 			</div>
@@ -175,7 +200,7 @@
 				<h4 class="strike-through">
 					<span>{{organization}}</span>
 					<span class="date">
-						{{startDate}} — {{endDate}}
+						{{duration}}
 					</span>
 				</h4>
 				{{#website}}
@@ -183,11 +208,20 @@
 					<a href="{{.}}">{{.}}</a>
 				</div>
 				{{/website}}
-				{{#position}}
+				{{#if position}}
 				<div class="position">
-					{{.}}
+					{{#position}}
+					<span>
+						{{.}}
+					</span>
+					{{/position}}
+					{{#date}}
+					<span class="date pull-right">
+						{{.}}
+					</span>
+					{{/date}}
 				</div>
-				{{/position}}
+				{{/if}}
 				{{#summary}}
 				<div class="summary">
 					<p>{{.}}</p>
@@ -220,7 +254,7 @@
 				<h4 class="strike-through">
 					<span>{{institution}}</span>
 					<span class="date">
-						{{startDate}} — {{endDate}}
+						{{date}}
 					</span>
 				</h4>
 				{{#area}}
@@ -376,29 +410,18 @@
 	</section>
 	{{/if}}
 
-	{{#if resume.interests.length}}
+	{{#if resume.interests.keywords.length}}
 	<section id="interests" class="row">
 		<aside class="col-sm-3">
 			<h3>Interests</h3>
 		</aside>
 		<div class="col-sm-9">
 			<div class="row">
-			{{#each resume.interests}}
-			<div class="col-sm-6">
-				{{#name}}
-				<div class="name">
-					<h4>{{.}}</h4>
-				</div>
-				{{/name}}
-				{{#if keywords.length}}
 				<ul class="keywords">
-					{{#keywords}}
+					{{#each resume.interests.keywords}}
 					<li>{{.}}</li>
-					{{/keywords}}
+					{{/each}}
 				</ul>
-				{{/if}}
-			</div>
-			{{/each}}
 			</div>
 		</div>
 	</section>
@@ -430,7 +453,20 @@
 	</section>
 	{{/if}}
 
+        <section id="footer ">
+		<p class="pull-right">
+		  &copy; 2021 {{ resume.basics.name }} |
+		  {{#config.pdf_file }}
+		  <a href="{{ . }}">Download PDF</a> |
+		  {{/config.pdf_file}}
+		  <a href="#" onclick="javascript:window.print(); return false">Print</a> |
+		  <a href="#">Top</a>
+		</p>
+		<p>
+		  Source on <a href="{{ resume.config.github_source }}">github</a>
+		</p>
+        </section>
+
 	</div>
-	
 	</body>
 </html>
