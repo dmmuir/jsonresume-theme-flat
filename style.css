@@ -171,7 +171,7 @@ h4 span:first-child {
 		margin-bottom: 7px;
 	}
 	.strike-through span {
-		display: block;
+		display: inline;
 	}	
 	#header {
 		margin-bottom: 10px;
@@ -179,5 +179,8 @@ h4 span:first-child {
 	}
 	#actions {
 		display: none;
+	}
+	.position span {
+		font-size: 13px;
 	}
 }
