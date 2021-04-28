@@ -52,12 +52,14 @@
 					<div class="email">{{.}}</div>
 				</div>
 				{{/email}}
+				{{#if phone}}
 				{{#phone}}
 				<div class="col-sm-6">
 					<strong>Phone</strong>
 					<div class="phone">{{.}}</div>
 				</div>
 				{{/phone}}
+				{{/if}}
 				{{#website}}
 				<div class="col-sm-6">
 					<strong>Website</strong>
