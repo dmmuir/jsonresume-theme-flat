@@ -154,6 +154,14 @@
 				</div>
 				{{/website}}
 				{{/if}}
+				{{#if highlights.length}}
+				<h4>Highlights</h4>
+				<ul class="highlights">
+					{{#highlights}}
+					<li class="bullet">{{.}}</li>
+					{{/highlights}}
+				</ul>
+				{{/if}}
 				{{#each roles}}
 				{{#if position}}
 				<div class="position">
@@ -174,14 +182,6 @@
 					<p>{{.}}</p>
 				</div>
 				{{/summary}}
-				{{#if highlights.length}}
-				<h4>Highlights</h4>
-				<ul class="highlights">
-					{{#highlights}}
-					<li class="bullet">{{.}}</li>
-					{{/highlights}}
-				</ul>
-				{{/if}}
 				{{/each}}
 			</div>
 			{{/each}}
