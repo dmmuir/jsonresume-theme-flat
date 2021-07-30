@@ -455,7 +455,7 @@
 	</section>
 	{{/if}}
 
-        <section id="footer ">
+        <section id="footer">
 		<p class="pull-right">
 		  &copy; 2021 {{ resume.basics.name }} |
 		  {{#config.pdf_file }}

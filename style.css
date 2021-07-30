@@ -184,3 +184,48 @@ h4 span:first-child {
 		font-size: 13px;
 	}
 }
+
+@media print {
+	#header {
+		padding-bottom: 5px;
+		margin-bottom: 0px;
+		display: flex;
+		flex-direction:column-reverse;
+	}
+
+	#interests, 
+	#volunteer, 
+	#profiles, 
+	#contact aside,
+	#work div .col-sm-12:last-child, /* This is the last work item */
+	#footer {
+		display: none;
+	}
+
+	h1 {
+		font-size: 26px;
+	}
+
+	#header h2, #skills h4 {
+		font-size: 16px;
+	}
+
+	#content h3 {
+		font-size: 18px;
+	}
+
+	#contact div .row, #skills .row {
+		display: flex;
+		justify-items: center;
+	}
+
+	#contact div .row {
+		justify-items: center;
+		flex-direction: row;
+	}
+
+	section {
+		margin-top: 15px;
+		page-break-inside: avoid;
+	}
+}
