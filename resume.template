@@ -255,7 +255,7 @@
 			<div class="col-sm-12">
 				<h4 class="strike-through">
 					<span>{{institution}}</span>
-					<span class="date">
+					<span class="date pull-right">
 						{{date}}
 					</span>
 				</h4>
@@ -458,9 +458,9 @@
         <section id="footer">
 		<p class="pull-right">
 		  &copy; 2021 {{ resume.basics.name }} |
-		  {{#config.pdf_file }}
-		  <a href="{{ . }}">Download PDF</a> |
-		  {{/config.pdf_file}}
+		  {{#resume.config.pdf_file }}
+		  <a href="{{ . }}">PDF</a> |
+		  {{/resume.config.pdf_file}}
 		  <a href="#" onclick="javascript:window.print(); return false">Print</a> |
 		  <a href="#">Top</a>
 		</p>
