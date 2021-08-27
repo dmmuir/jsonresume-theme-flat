@@ -81,8 +81,14 @@
 					<div class="timezone">{{.}}</div>
 				</div>
 				{{/timezone}}
+				{{/location}}
+				{{#each profiles}}
+				<div class="col-sm-6 print-only">
+					<strong>{{network}}</strong>
+					<div>{{url}}</div>
+				</div>
+				{{/each}}
 			</div>
-			{{/location}}
 		</div>
 	</section>
 	<section id="about" class="row">
