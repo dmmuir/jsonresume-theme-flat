@@ -181,7 +181,7 @@ h4 span:first-child {
 		margin-bottom: 10px;
 		padding: 40px 0;
 	}
-	#actions {
+	#actions, .mobile-exclude {
 		display: none;
 	}
 	.position span {
