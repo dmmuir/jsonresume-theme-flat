@@ -160,6 +160,11 @@
 				</div>
 				{{/website}}
 				{{/if}}
+				{{#industry}}
+				<div class="industry">
+					<span>{{.}}</span>
+				</div>
+				{{/industry}}
 				{{#if highlights.length}}
 				<h4>Highlights</h4>
 				<ul class="highlights">
