@@ -331,6 +331,42 @@
 	</section>
 	{{/if}}
 	
+
+	{{#if resume.project.length}}
+		<section id="project" class="row">
+			<aside class="col-sm-3">
+				<h3>Projects</h3>
+			</aside>
+			<div class="col-sm-9">
+				<div class="row">
+				{{#each resume.project}}
+				<div class="col-sm-12">
+					<h4 class="strike-through">
+						<span>{{name}}</span>
+						<span class="date pull-right">{{date}}</span>
+					</h4>
+					{{#summary}}
+					<div class="summary">
+						<p>{{.}}</p>
+					</div>
+					{{/summary}}
+					{{#if highlights.length}}
+					<div class="project-highlights">
+						<h4>Highlights</h4>
+						<ul class="highlights">
+						{{#each highlights}}
+							<li>{{.}}</li>
+						{{/each}}
+						</ul>
+					</div>
+					{{/if}}
+				</div>
+				{{/each}}
+				</div>
+			</div>
+		</section>
+	{{/if}}
+ 
 	{{#if resume.publications.length}}
 	<section id="publications" class="row">
 		<aside class="col-sm-3">
