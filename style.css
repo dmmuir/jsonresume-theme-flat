@@ -1,24 +1,28 @@
-@import url(
-https://fonts.googleapis.com/css?family=Lato:400,700
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700
 );
+
 body {
 	background: #fff;
 	font-family: Lato, sans-serif;
 	margin: 0 0 80px;
 }
+
 a {
 	color: #5e81ac;
 }
+
 a:focus,
 a:hover {
 	color: #88c0d0;
 	text-decoration: none;
 }
+
 p {
 	line-height: 1.5;
 	margin: 0;
 }
-p + p {
+
+p+p {
 	margin-top: 10px;
 }
 
@@ -28,13 +32,16 @@ h3,
 h4 {
 	margin-top: 0
 }
+
 section {
 	margin-top: 30px;
 }
+
 li {
 	line-height: 1.8;
 	list-style: none;
 }
+
 li:before {
 	content: "\f052";
 	float: left;
@@ -44,79 +51,98 @@ li:before {
 	opacity: .1;
 	position: absolute;
 }
+
 blockquote {
 	border-left: 5px solid #e7e9ec;
 	font-size: 14px;
 }
+
 em {
 	color: #95a5a6;
 	font-weight: normal;
 	font-style: normal;
 }
+
 h4 span:first-child {
 	color: #000;
 	font-weight: bold;
 }
+
 .container {
 	max-width: 750px;
 	padding: 0 30px;
 }
+
 .col-sm-6 {
 	margin-bottom: 10px;
 }
+
 .col-sm-12 h4 {
-	margin-top: 12px; 
+	margin-top: 12px;
 }
-.col-sm-12 + .col-sm-12 {
+
+.col-sm-12+.col-sm-12 {
 	margin-top: 30px;
 }
+
 #header {
 	background: #f4f6f6;
 	padding: 50px 0;
 	margin-bottom: 30px;
 }
+
 #header h2 {
 	color: #81a1c1;
 	font-size: 24px;
 }
+
 #content h3 {
 	color: #5e81ac;
 	font-size: 26px;
 	margin-top: -4px;
 }
+
 #content aside {
 	text-align: right;
 	padding-right: 30px;
 }
+
 #profiles .network {
 	text-transform: capitalize;
 }
+
 #work .position,
 #work .industry,
 #volunteer .position {
 	font-weight: bold;
 	margin-bottom: 8px;
 }
+
 #work .summary,
 #work .industry,
 #volunteer .summary {
 	padding-bottom: 5px;
 }
+
 #education .area {
 	font-weight: bold;
 }
+
 #education .area:before {
 	content: "\f0d7";
 	font: 16px Octicons;
 	margin-right: 6px;
 }
+
 #education .studyType {
 	margin-left: 25px;
 }
+
 #awards .summary,
 #publications .summary {
 	margin-top: 8px;
 }
+
 #publications .website a:before {
 	content: attr(href);
 }
@@ -137,56 +163,70 @@ h4 span:first-child {
 		margin-bottom: -2px;
 		position: relative;
 	}
+
 	.strike-through span,
 	.strike-through a {
 		background: #fff;
 		position: absolute;
 	}
+
 	.strike-through span:first-child {
 		padding-right: 20px;
 		margin-top: -12px;
 	}
-	.strike-through span + span {
+
+	.strike-through span+span {
 		font-size: 14px;
 		margin-top: -10px;
 		padding-left: 20px;
 		right: 0;
 	}
 }
+
 @media (max-width: 768px) {
 	.col-sm-6:last-child {
 		margin-bottom: 0px;
 	}
+
 	#content aside {
 		margin-bottom: 20px;
 		padding-right: 0;
 		text-align: left;
 	}
+
 	#publications .website a:before {
 		content: "View publication";
 	}
 }
+
 @media (max-width: 480px) {
 	h1 {
 		font-size: 26px;
 	}
+
 	.date {
 		font-size: 14px;
 		margin-bottom: 5px;
 	}
+
 	.strike-through span:first-child {
 		margin-bottom: 7px;
 	}
+
 	.strike-through span {
 		display: inline;
-	}	
+	}
+
 	#header {
 		margin-bottom: 10px;
 		padding: 40px 0;
 	}
-	#actions, .mobile-exclude {
+
+	#actions,
+	.mobile-exclude {
 		display: none;
 	}
+
 	.position span {
 		font-size: 13px;
 	}
@@ -197,31 +237,40 @@ h4 span:first-child {
 		padding-bottom: 5px;
 		margin-bottom: 0px;
 		display: flex;
-		flex-direction:column-reverse;
+		flex-direction: column-reverse;
 	}
 
 	#about,
-	#interests, 
-	#volunteer, 
-	#profiles, 
+	#interests,
+	#volunteer,
+	#profiles,
 	#contact aside,
-	#work div .col-sm-12:last-child, /* This is the last work item */
+	#work div .col-sm-12:last-child,
+	/* This is the last work item */
 	#footer {
 		display: none;
+	}
+
+	#project {
+		padding-top: 20px;
+		page-break-before: always;
 	}
 
 	h1 {
 		font-size: 20px;
 	}
 
-	#header h2, #skills h4 {
+	#header h2,
+	#skills h4 {
 		font-size: 10pt;
 	}
 
 	#content h3 {
 		font-size: 13pt;
 	}
-	#work h4, #education h4{
+
+	#work h4,
+	#education h4 {
 		font-size: 12pt;
 	}
 
@@ -229,7 +278,8 @@ h4 span:first-child {
 		font-size: 8pt !important;
 	}
 
-	#contact div .row, #skills .row {
+	#contact div .row,
+	#skills .row {
 		display: flex;
 		justify-items: center;
 	}
